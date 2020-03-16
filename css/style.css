@@ -1,0 +1,57 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Microsoft YaHei';
+	background-color: #fff;
+}
+
+a {
+	background: transparent;
+	text-decoration: none;
+	color: #1c1c1c;
+}
+
+li,
+ol {
+	list-style: none;
+}
+
+button {
+	border: none;
+}
+
+
+/*通用样式*/
+
+.hader-dve {
+	width: 70%;
+	border-bottom: 1px solid #e2e2e2;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+
+.changelook input {
+	margin: 10px;
+	line-height: 28px;
+	text-align: center;
+}
+
+.changelook td {
+	padding: 10px;
+	text-align: center;
+}
+
+.changelook td button {
+	background-color: #E2E2E2;
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+
+.changelook td button.active {
+	background-color: dodgerblue;
+	color: #fff;
+}

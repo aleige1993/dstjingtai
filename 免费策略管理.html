@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<body>
+		<style>
+			.magpanl li{
+				margin-top: 40px;
+			}
+			.magpanl li input{
+				line-height: 30px;
+				text-align: center;
+			}
+			.magpanl li  button{
+				margin-left: 20px;
+				background-color: #E2E2E2;
+				padding: 5px 10px;
+				border-radius: 3px;
+			}
+			.magpanl li  button.active{
+				background-color: dodgerblue;
+				color: #fff;
+			}
+		</style>
+		<div class="hader-dve">
+			<span>> 收费策略管理</span>
+		</div>
+		<div class="mount-mag">
+			<div class="magpanl">
+				<li class="row">
+					<span>月免费查看次数：</span>
+					<input type="text" name="Check" value="49" />
+					<button>确认修改</button>
+				</li>
+				<li class="row">
+					<span>天免费发布次数：</span>
+					<input type="text" name="Release" value="49" />
+					<button>确认修改</button>
+				</li>
+			</div>
+		</div>
+		<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$('input').bind("input propertychange",function(){
+			  $(this).siblings('button').addClass('active')  
+			})
+			$('button').click(function (value) {
+			var boole = $(this).hasClass('active'); 
+			var Check = $(this).parents('.row').find("input[name='Check']").val();
+			var Release = $(this).parents('.row').find("input[name='Release']").val();
+			if(boole){
+				console.log('days:' +Check +'-'+'moenys:'+ Release)
+			} 
+			})
+		</script>
+	</body>
+</html>

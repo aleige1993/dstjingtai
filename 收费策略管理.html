@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>收费策略管理</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/> 
+	<body>
+		<div class="hader-dve">
+			<span>> 收费策略管理</span>
+		</div>
+		<div class="table-panl">
+			<table class="changelook" style="border-collapse:collapse;" border="1" cellspacing="0" cellpadding="5">
+				<tr>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+					<th>天数</th>
+					<th>附加信息</th>
+					<th>收费金额</th>
+					<th>操作</th>
+				</tr>
+				<tr class="row">
+					<td rowspan="3">任意看</td>
+					<td><input type="text" name="days" value="49" /></td>
+					<td>天内信息任意看</td>
+					<td><input type="text" name="moenys" value="49" /></td>
+					<td><button type="button">确认修改</button></td>
+				</tr>
+				<tr class="row">
+					<td><input type="text" name="days" value="49" /></td>
+					<td>天内信息任意看</td>
+					<td><input type="text" name="moenys" value="49" /></td>
+					<td><button type="button" >确认修改</button></td>
+				</tr>
+				<tr class="row">
+					<td><input type="text" name="days" value="49" /></td>
+					<td>天内信息任意看</td>
+					<td><input type="text" name="moenys" value="49" /></td>
+					<td><button type="button">确认修改</button></td>
+				</tr>
+				<tr class="row">
+					<td>任意发</td>
+					<td><input type="text" name="days" value="30" /></td>
+					<td></td>
+					<td><input type="text" name="moenys" value="6" /></td>
+					<td><button type="button">确认修改</button></td>
+				</tr>
+			</table>
+		</div>
+		<script src="js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$('input').bind("input propertychange",function(){
+				$(this).parents('.row').find('button').addClass('active')
+			})
+			$('button').click(function (value) {
+			console.log($(this).hasClass('active'))
+			var boole = $(this).hasClass('active');
+			var index =  $('.table-panl .row').index($(this).parents('.row')) 
+			var days = $(this).parents('.row').find("input[name='days']").val();
+			var moenys = $(this).parents('.row').find("input[name='moenys']").val();
+			if(boole){
+				console.log('days:' +days +'-'+'moenys:'+ moenys)
+			} 
+			})
+			
+		</script>
+	</body>
+</html>
